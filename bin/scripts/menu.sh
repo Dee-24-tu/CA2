@@ -21,3 +21,8 @@ cd /var/bin/scripts/
 run_backup(){
     ./backups-intranet.sh
 }
+
+transfer_changes(){
+    # Sync changes made in each file into Live folder
+    ./transfer-intranet-to-live.sh
+}
