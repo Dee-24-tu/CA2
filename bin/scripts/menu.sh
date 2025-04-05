@@ -16,3 +16,8 @@ create_user(){
     fi
 }
 
+cd /var/bin/scripts/
+
+run_backup(){
+    ./backups-intranet.sh
+}
