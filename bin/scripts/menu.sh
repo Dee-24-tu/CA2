@@ -19,7 +19,7 @@ create_user(){
 cd /var/bin/scripts/
 
 run_backup(){
-    ./backups-intranet.sh
+    ./backup-intranet.sh
 }
 
 transfer_changes(){
@@ -34,3 +34,48 @@ user_activity(){
 health_check(){
     ./system-health-report.sh
 }
+
+text_input=""
+while [ "$text_input" != "Exit" ]
+do
+    clear 
+    echo "******Select the operation******"
+    echo " 1) Create a user"
+    echo " 2) Delete a user"
+    echo " 3) Run back up"
+    echo " 4) Transfer Live"
+    echo " 5) View user logs"
+    echo " 6) Check System Health"
+    echo " 7) Exit"
+    
+    read userInput
+
+    case $userInput in 
+        1) echo "Create New User"
+        create_user
+        ;;
+        2) echo "Running Backup"
+        run_backup
+        ;;
+        4) echo "Transfering Live"
+        transfer_changes
+        ;;
+        5) echo "Running User Logs"
+        user_activity
+        echo "User activity log complete."
+        ;;
+        6) echo "Running System Health Check"
+        health_check
+        ;;
+        7) echo "Closing...";
+        break
+        ;;
+        *) echo "Invalid Option";;
+    esac
+
+    echo ""
+    echo "Press any key to continue..."
+
+    read key
+    sleep 1
+done 
