@@ -31,4 +31,6 @@ user_activity(){
     ./audit-report.sh
 }
 
-
+health_check(){
+    ./system-health-report.sh
+}
