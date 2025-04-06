@@ -27,3 +27,7 @@ transfer_changes(){
     ./transfer-intranet-to-live.sh
 }
 
+
+user_activity(){
+    ./audit-report.sh
+}
